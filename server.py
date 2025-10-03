@@ -1,7 +1,7 @@
 # server.py
 import json
 from http.server import HTTPServer, BaseHTTPRequestHandler
-from actions import launch_spotify, play_pause, bluetooth, test_sound
+from actions import launch_spotify, play_pause, bluetooth, test_sound, set_volume
 import time
 import socket
 
@@ -13,6 +13,8 @@ def perform_action(action: str):
         if action in ("launch_and_play",):
             bluetooth.run()
             steps.append("Bluetooth connected")
+            set_volume.run()
+            steps.append("Setting Volume")
             test_sound.run()
             steps.append("Testing sound")
             launch_spotify.run()
