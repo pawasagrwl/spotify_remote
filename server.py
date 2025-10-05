@@ -5,8 +5,30 @@ from actions import launch_spotify, play_pause, bluetooth, test_sound, set_volum
 import time
 import socket
 import asyncio
+import sys, os, yaml
 
-PORT = 8765
+def resource_path(rel):
+    base = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base, rel)
+
+# load config if present, else use defaults
+cfg_path = resource_path("config.yaml")
+DEFAULT_CONFIG = {
+    "server": {"port": 8765, "cooldown_sec": 8},
+    "bluetooth": {"device_name": "Echo Show 5-1MM", "wait_connect_sec": 10},
+    "spotify": {"playlist_uri": None},
+    "security": {}
+}
+if os.path.exists(cfg_path):
+    try:
+        with open(cfg_path, "r", encoding="utf-8") as f:
+            cfg = yaml.safe_load(f) or DEFAULT_CONFIG
+    except Exception:
+        cfg = DEFAULT_CONFIG
+else:
+    cfg = DEFAULT_CONFIG
+PORT = cfg["server"].get("port", 8765)
+
 
 def perform_action(action: str):
     steps = []
