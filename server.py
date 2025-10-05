@@ -1,9 +1,10 @@
 # server.py
 import json
 from http.server import HTTPServer, BaseHTTPRequestHandler
-from actions import launch_spotify, play_pause, bluetooth, test_sound, set_volume
+from actions import launch_spotify, play_pause, bluetooth, test_sound, set_volume, ensure_play
 import time
 import socket
+import asyncio
 
 PORT = 8765
 
@@ -17,10 +18,13 @@ def perform_action(action: str):
             steps.append("Setting Volume")
             test_sound.run()
             steps.append("Testing sound")
-            launch_spotify.run()
-            steps.append("Launched Spotify")
-            play_pause.run()
-            steps.append("Sent Play/Pause")
+            asyncio.run(ensure_play.run())
+            steps.append("Spotify launched and playback ensured")
+
+            # launch_spotify.run()
+            # steps.append("Launched Spotify")
+            # play_pause.run()
+            # steps.append("Sent Play/Pause")
         return {"status": "success", "steps": steps}
     except Exception as e:
         return {"status": "error", "steps": steps + [f"ERROR: {e}"]}
