@@ -1,0 +1,23 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+C:\code\projects\spotify_remote\SpotifyRemote.App\Services\Implementations\SpotifyManager.cs(84,13): error CS0103: The name 'keybd_event' does not exist in the current context [C:\code\projects\spotify_remote\SpotifyRemote.App\SpotifyRemote.App_2v2rmkk3_wpftmp.csproj]
+C:\code\projects\spotify_remote\SpotifyRemote.App\Services\Implementations\SpotifyManager.cs(84,25): error CS0103: The name 'VK_MEDIA_PLAY_PAUSE' does not exist in the current context [C:\code\projects\spotify_remote\SpotifyRemote.App\SpotifyRemote.App_2v2rmkk3_wpftmp.csproj]
+C:\code\projects\spotify_remote\SpotifyRemote.App\Services\Implementations\SpotifyManager.cs(84,49): error CS0103: The name 'KEYEVENTF_EXTENDEDKEY' does not exist in the current context [C:\code\projects\spotify_remote\SpotifyRemote.App\SpotifyRemote.App_2v2rmkk3_wpftmp.csproj]
+C:\code\projects\spotify_remote\SpotifyRemote.App\Services\Implementations\SpotifyManager.cs(85,13): error CS0103: The name 'keybd_event' does not exist in the current context [C:\code\projects\spotify_remote\SpotifyRemote.App\SpotifyRemote.App_2v2rmkk3_wpftmp.csproj]
+C:\code\projects\spotify_remote\SpotifyRemote.App\Services\Implementations\SpotifyManager.cs(85,25): error CS0103: The name 'VK_MEDIA_PLAY_PAUSE' does not exist in the current context [C:\code\projects\spotify_remote\SpotifyRemote.App\SpotifyRemote.App_2v2rmkk3_wpftmp.csproj]
+C:\code\projects\spotify_remote\SpotifyRemote.App\Services\Implementations\SpotifyManager.cs(85,49): error CS0103: The name 'KEYEVENTF_EXTENDEDKEY' does not exist in the current context [C:\code\projects\spotify_remote\SpotifyRemote.App\SpotifyRemote.App_2v2rmkk3_wpftmp.csproj]
+C:\code\projects\spotify_remote\SpotifyRemote.App\Services\Implementations\SpotifyManager.cs(85,73): error CS0103: The name 'KEYEVENTF_KEYUP' does not exist in the current context [C:\code\projects\spotify_remote\SpotifyRemote.App\SpotifyRemote.App_2v2rmkk3_wpftmp.csproj]
+
+Build FAILED.
+
+C:\code\projects\spotify_remote\SpotifyRemote.App\Services\Implementations\SpotifyManager.cs(84,13): error CS0103: The name 'keybd_event' does not exist in the current context [C:\code\projects\spotify_remote\SpotifyRemote.App\SpotifyRemote.App_2v2rmkk3_wpftmp.csproj]
+C:\code\projects\spotify_remote\SpotifyRemote.App\Services\Implementations\SpotifyManager.cs(84,25): error CS0103: The name 'VK_MEDIA_PLAY_PAUSE' does not exist in the current context [C:\code\projects\spotify_remote\SpotifyRemote.App\SpotifyRemote.App_2v2rmkk3_wpftmp.csproj]
+C:\code\projects\spotify_remote\SpotifyRemote.App\Services\Implementations\SpotifyManager.cs(84,49): error CS0103: The name 'KEYEVENTF_EXTENDEDKEY' does not exist in the current context [C:\code\projects\spotify_remote\SpotifyRemote.App\SpotifyRemote.App_2v2rmkk3_wpftmp.csproj]
+C:\code\projects\spotify_remote\SpotifyRemote.App\Services\Implementations\SpotifyManager.cs(85,13): error CS0103: The name 'keybd_event' does not exist in the current context [C:\code\projects\spotify_remote\SpotifyRemote.App\SpotifyRemote.App_2v2rmkk3_wpftmp.csproj]
+C:\code\projects\spotify_remote\SpotifyRemote.App\Services\Implementations\SpotifyManager.cs(85,25): error CS0103: The name 'VK_MEDIA_PLAY_PAUSE' does not exist in the current context [C:\code\projects\spotify_remote\SpotifyRemote.App\SpotifyRemote.App_2v2rmkk3_wpftmp.csproj]
+C:\code\projects\spotify_remote\SpotifyRemote.App\Services\Implementations\SpotifyManager.cs(85,49): error CS0103: The name 'KEYEVENTF_EXTENDEDKEY' does not exist in the current context [C:\code\projects\spotify_remote\SpotifyRemote.App\SpotifyRemote.App_2v2rmkk3_wpftmp.csproj]
+C:\code\projects\spotify_remote\SpotifyRemote.App\Services\Implementations\SpotifyManager.cs(85,73): error CS0103: The name 'KEYEVENTF_KEYUP' does not exist in the current context [C:\code\projects\spotify_remote\SpotifyRemote.App\SpotifyRemote.App_2v2rmkk3_wpftmp.csproj]
+    0 Warning(s)
+    7 Error(s)
+
+Time Elapsed 00:00:00.92
