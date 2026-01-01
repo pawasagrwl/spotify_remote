@@ -16,10 +16,15 @@ namespace SpotifyRemote.App
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddSingleton<MainWindow>();
+                    // Business Services
                     services.AddSingleton<IBluetoothManager, BluetoothManager>();
                     services.AddSingleton<IAudioManager, AudioManager>();
                     services.AddSingleton<ISpotifyManager, SpotifyManager>();
                     services.AddSingleton<IServerService, ServerService>();
+                    services.AddSingleton<IStartupManager, RegistryStartupManager>();
+
+                    // Main ViewModel
+                    services.AddSingleton<MainViewModel>();
                 })
                 .Build();
         }

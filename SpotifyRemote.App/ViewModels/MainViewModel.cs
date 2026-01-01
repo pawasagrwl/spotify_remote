@@ -12,12 +12,14 @@ namespace SpotifyRemote.App.ViewModels
         private readonly IBluetoothManager? _bluetoothManager;
         private readonly IAudioManager? _audioManager;
         private readonly ISpotifyManager? _spotifyManager;
+        private readonly IStartupManager? _startupManager;
 
         // Settings
         private string _deviceName = "Echo Show 5";
         private int _port = 5000;
-        private string _spotifyUri = "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"; // Global Top 50 default
+        private string _spotifyUri = "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"; 
         private bool _isServerRunning;
+        private bool _runOnStartup;
         private string _statusLog = "Ready.";
 
         public string DeviceName
@@ -43,6 +45,17 @@ namespace SpotifyRemote.App.ViewModels
             get => _isServerRunning;
             set { _isServerRunning = value; OnPropertyChanged(); }
         }
+
+        public bool RunOnStartup
+        {
+            get => _runOnStartup;
+            set 
+            { 
+                _runOnStartup = value; 
+                _startupManager?.SetRunOnStartup(value);
+                OnPropertyChanged(); 
+            }
+        }
         
         public string StatusLog
         {
@@ -56,12 +69,16 @@ namespace SpotifyRemote.App.ViewModels
         // Default constructor for XAML design time
         public MainViewModel() { }
 
-        public MainViewModel(IServerService server, IBluetoothManager bt, IAudioManager audio, ISpotifyManager spotify)
+        public MainViewModel(IServerService server, IBluetoothManager bt, IAudioManager audio, ISpotifyManager spotify, IStartupManager startup)
         {
             _serverService = server;
             _bluetoothManager = bt;
             _audioManager = audio;
             _spotifyManager = spotify;
+            _startupManager = startup;
+
+            // Load initial state
+            _runOnStartup = _startupManager.IsRunOnStartupEnabled();
 
             ToggleServerCommand = new RelayCommand(async (_) => await ToggleServerAsync());
             TestTriggerCommand = new RelayCommand(async (_) => await TestTriggerAsync());

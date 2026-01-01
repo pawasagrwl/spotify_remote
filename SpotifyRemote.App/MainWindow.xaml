@@ -46,7 +46,8 @@
     <Grid>
         <tb:TaskbarIcon x:Name="MyNotifyIcon"
                         ToolTipText="Spotify Remote Server"
-                        MenuActivation="RightClick">
+                        MenuActivation="RightClick"
+                        IconSource="/icon.png">
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Open Settings" Click="ShowWindow_Click"/>
@@ -57,16 +58,20 @@
         </tb:TaskbarIcon>
 
         <StackPanel Margin="20">
-            <TextBlock Text="Spotify Remote" FontSize="24" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
+            <TextBlock Text="Spotify Remote Server" FontSize="24" FontWeight="Bold" Foreground="#1DB954" Margin="0,0,0,20"/>
 
-            <TextBlock Text="Target Device (Bluetooth Name)"/>
-            <TextBox Text="{Binding DeviceName, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Text="Target Bluetooth Device Name:" Margin="0,10,0,5"/>
+            <TextBox Text="{Binding DeviceName, UpdateSourceTrigger=PropertyChanged}" Padding="5"/>
 
-            <TextBlock Text="Server Port"/>
-            <TextBox Text="{Binding Port, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Text="Server Port:" Margin="0,10,0,5"/>
+            <TextBox Text="{Binding Port, UpdateSourceTrigger=PropertyChanged}" Padding="5"/>
 
-            <TextBlock Text="Spotify Playlist URI"/>
-            <TextBox Text="{Binding SpotifyUri, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Text="Spotify Playlist URI:" Margin="0,10,0,5"/>
+            <TextBox Text="{Binding SpotifyUri, UpdateSourceTrigger=PropertyChanged}" Padding="5"/>
+            
+            <CheckBox Content="Run on Startup" 
+                      IsChecked="{Binding RunOnStartup}" 
+                      Margin="0,15,0,5" Foreground="White"/>
 
             <Grid Margin="0,10,0,0">
                 <Grid.ColumnDefinitions>
@@ -75,7 +80,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 
-                <Button Grid.Column="0" Content="{Binding IsServerRunning, Converter={StaticResource BooleanToStringConverter}, FallbackValue='Toggle Server'}" 
+                <Button Grid.Column="0" Content="{Binding IsServerRunning, Converter={StaticResource BooleanToStringConverter}}" 
                         Command="{Binding ToggleServerCommand}">
                     <Button.Style>
                         <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
